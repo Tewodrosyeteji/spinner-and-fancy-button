@@ -72,3 +72,44 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.box {
+  margin: 25px;
+}
+
+.box .toggle {
+  opacity: 0;
+}
+.box .toggle + label {
+  position: relative;
+  padding-left: 6rem;
+}
+
+.box .toggle + label::before {
+  content: "";
+  width: 5.5rem;
+  height: 2.5rem;
+  border-radius: 1.25rem;
+  background-color: #c6d0cc;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color 0.2s ease;
+}
+.box .toggle + label::after {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  background-color: white;
+  top: 0.25rem;
+  left: 0.25rem;
+  transition: transform 0.2s ease;
+}
+.box .toggle:checked + label::before {
+  background-color: #20b776;
+}
+.box .toggle:checked + label::after {
+  transform: translate(3rem);
+}
